@@ -1,0 +1,12 @@
+red = #FF0000
+green = #00FF00
+blue = #0000FF
+
+be red when:
+    red > 3 and blue < 2
+    green <= 2
+be green when:
+    blue > 4
+    red < 3
+be blue when:
+    else
