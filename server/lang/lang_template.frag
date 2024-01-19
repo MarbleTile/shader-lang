@@ -30,6 +30,8 @@ void main(){
         }
     }
 
+    vec4 color;
+
 //RULES
 
     gl_FragColor = color;

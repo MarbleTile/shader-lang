@@ -8,7 +8,6 @@ uniform vec2 normalRes;
 
 void main(){
     vec2 uv = vTexCoord;
-
     uv.y = 1.0 - uv.y;
 
 	red = vec4(1.0, 0.0, 0.0, 1.0);
@@ -16,9 +15,9 @@ void main(){
 	blue = vec4(0.0, 0.0, 1.0, 1.0);
 
 
-	uint red_num;
-	uint green_num;
-	uint blue_num;
+	uint red_num = 0;
+	uint green_num = 0;
+	uint blue_num = 0;
 
 
     vec4 col;
@@ -47,9 +46,19 @@ void main(){
         }
     }
 
-    num -= a;
+    vec4 color=red;
 
-//RULES
+	if(red_num>3&&blue_num<2 || green_num<=2){
+		color=red;
+	} else {
+		color=blue;
+	}
+	if(blue_num>4 || red_num<3){
+		color=green;
+	} else {
+		color=blue;
+	}
+
 
     gl_FragColor = color;
 }
